@@ -24,14 +24,14 @@
     width: 200px;
     text-align: right;
     padding-right: 15px;
-    nowrap;
+    wrap: nowrap;
 }
 
 .reverse-proxy-edit .setting-table > tbody > tr > .first {
     width: 220px;
     text-align: right;
     padding-right: 15px;
-    nowrap;
+    wrap: nowrap;
 }
 
 .jimu-widget-add-layer-setting .setting-table > tbody > tr > .second,
@@ -194,7 +194,7 @@
 
 .jimu-widget-search-setting .jimu-dropmenu {
     overflow: visible;
-    padding 0 0 0 0;
+    padding: 0 0 0 0;
 }
 
 .popup-edit .add-field-button>.add-field-icon-btn {
@@ -233,7 +233,7 @@
     position: absolute;
     border: 1px solid #999999;
     background-color: #ffffff;
-    z-index: 99;
+    z-index: 99 !important;
     overflow-y: auto;
     max-height: 220px;
 }
@@ -244,7 +244,7 @@
     margin: 0;
     padding: 0 5px;
     cursor: pointer;
-    font-size: 10;
+    font-size: 10px;
     white-space: nowrap;
 }
 
@@ -352,7 +352,7 @@
     padding-bottom: 8px;
 }
 
-.popup=edit .custom-popup-buttons {
+.popup-edit .custom-popup-buttons {
     display: inline-block;
     padding: 0 8px;
     float: left;
@@ -513,7 +513,7 @@
     margin: 0;
     padding: 0 5px;
     cursor: pointer;
-    font-size: 10;
+    font-size: 10px;
     white-space: nowrap;
 }
 

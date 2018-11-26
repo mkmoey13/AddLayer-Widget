@@ -42,7 +42,7 @@ define(
         Popup,
         keys,
         PopupEdit) {
-        return declare([BaseWidgetSetting, _WidgetsInTemplateMixin], {
+        return declare([BaseWidgetSetting,_TemplatedMixin, _WidgetsInTemplateMixin], {
             baseClass: 'dynamic-layer-edit',
             templateString: template,
             config: null,

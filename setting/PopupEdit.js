@@ -10,7 +10,6 @@ define(
     'dijit/_WidgetsInTemplateMixin',
     'jimu/BaseWidgetSetting',
     'jimu/dijit/Message',
-    'dojo/text!./PopupEdit.html',
     'jimu/dijit/TabContainer3',
     './CustomPopupBtns',
     'jimu/dijit/Popup',
@@ -18,11 +17,12 @@ define(
     './HyperlinkEdit',
     './ImageEdit',
     './FieldFormatEdit',
+      './AddFieldBtn',
+      'dojo/text!./PopupEdit.html',
     'esri/request',
-    './AddFieldBtn',
-    'dijit/form/TextBox',
-    'widgets/AddLayer/setting/SimpleTable',
-    'jimu/dijit/CheckBox'
+      'dijit/form/TextBox',
+      'jimu/dijit/SimpleTable',
+      'jimu/dijit/CheckBox'
   ],
     function (
         declare,
@@ -35,7 +35,6 @@ define(
         _WidgetsInTemplateMixin,
         BaseWidgetSetting,
         Message,
-        template,
         TabContainer3,
         CustomPopupBtns,
         Popup,
@@ -43,9 +42,11 @@ define(
         HyperlinkEdit,
         ImageEdit,
         FieldFormatEdit,
-        esriRequest
+        AddFieldBtn,
+        template,
+        esriRequest,
     ) {
-        return declare([BaseWidgetSetting, _WidgetsInTemplateMixin], {
+        return declare([BaseWidgetSetting, _TemplatedMixin, _WidgetsInTemplateMixin], {
             baseClass: 'popup-edit',
             templateString: template,
             config: null,
@@ -67,7 +68,7 @@ define(
                 this.inherited(arguments);
                 this._initTabs();
                 this._setConfig(this.config);
-                this._initCustomButtons();
+                // this._initCustomButtons();
                 this._bindEvents();
             },
 
@@ -218,11 +219,11 @@ define(
                     this._setFieldVisible(item.key);
                     this._insertAtCursor(this.customContentTA, item.key);
                 })));
-                this.own(on(this.cbuttons, 'onBold', lang.hitch(this, this._onBoldClick)));
-                this.own(on(this.cbuttons, 'onItalic', lang.hitch(this, this._onItalicClick)));
-                this.own(on(this.cbuttons, 'onUnderline', lang.hitch(this, this._onUnderlineClick)));
-                this.own(on(this.cbuttons, 'onHyperlink', lang.hitch(this, this._onHyperlinkClick)));
-                this.own(on(this.cbuttons, 'onImage', lang.hitch(this, this._onImageClick)));
+                // this.own(on(this.cbuttons, 'onBold', lang.hitch(this, this._onBoldClick)));
+                // this.own(on(this.cbuttons, 'onItalic', lang.hitch(this, this._onItalicClick)));
+                // this.own(on(this.cbuttons, 'onUnderline', lang.hitch(this, this._onUnderlineClick)));
+                // this.own(on(this.cbuttons, 'onHyperlink', lang.hitch(this, this._onHyperlinkClick)));
+                // this.own(on(this.cbuttons, 'onImage', lang.hitch(this, this._onImageClick)));
             },
 
             _setFieldVisible: function (value) {
